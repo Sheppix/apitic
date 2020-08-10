@@ -4,10 +4,10 @@
 
 || Guide ||
 
-1. `git https://github.com/Sheppix/apitic.git
+1. `git https://github.com/Sheppix/apitic.git`
 2. `copier le .env dev pour le passer en .env`
 3. `Changer .env avec les bonnes données de BDD`
-4. `php artisan key:generate
+4. `php artisan key:generate`
 5. `composer install && composer update`
 6. `npm install`
 7. `npm run dev`
