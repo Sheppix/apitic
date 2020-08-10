@@ -13,7 +13,7 @@ class CreateArmureTable extends Migration
      */
     public function up()
     {
-        Schema::create('armure', function (Blueprint $table) {
+        Schema::create('armures', function (Blueprint $table) {
             $table->id();
             $table->string('nom_armure');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateArmureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('armure');
+        Schema::dropIfExists('armures');
     }
 }

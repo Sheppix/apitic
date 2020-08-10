@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('pseudo')->unique();
+            $table->bigInteger('id_personnage')->unsigned();
             $table->timestamps();
         });
     }

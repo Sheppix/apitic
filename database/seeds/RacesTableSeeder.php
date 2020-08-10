@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PersonnageTableSeeder extends Seeder
+class RacesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PersonnageTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Personnage::Class, 10)->create();
+        factory(\App\Race::Class, 10)->create();
     }
 }

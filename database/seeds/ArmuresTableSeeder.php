@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ArmureTableSeeder extends Seeder
+class ArmuresTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

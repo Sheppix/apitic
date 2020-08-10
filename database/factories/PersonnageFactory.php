@@ -10,7 +10,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Personnage::class, function (Faker $faker) {
     return [
-        'nom_personnage' => $faker->nom_personnage,
+        'nom_personnage' => $faker->userName,
         'id_armure' => function() {
             return factory(\App\Armure::class)->create()->id;
         },

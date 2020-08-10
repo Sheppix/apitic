@@ -13,7 +13,7 @@ class CreateRaceTable extends Migration
      */
     public function up()
     {
-        Schema::create('race', function (Blueprint $table) {
+        Schema::create('races', function (Blueprint $table) {
             $table->id();
             $table->string('nom_race');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateRaceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('race');
+        Schema::dropIfExists('races');
     }
 }
