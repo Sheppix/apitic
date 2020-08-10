@@ -4,7 +4,7 @@
 
 || Guide ||
 
-1. `git https://github.com/Sheppix/apitic.git`
+1. `git clone https://github.com/Sheppix/apitic.git`
 2. `copier le .env dev pour le passer en .env`
 3. `Changer .env avec les bonnes données de BDD`
 4. `php artisan key:generate`
