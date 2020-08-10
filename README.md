@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://media-exp1.licdn.com/dms/image/C4E0BAQHTJYQxU6kYqw/company-logo_200_200/0?e=2159024400&v=beta&t=BDvvZ08zdHlnrT-IAkqFRsWRh_mO9eafiueCb0oNWBQ" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
