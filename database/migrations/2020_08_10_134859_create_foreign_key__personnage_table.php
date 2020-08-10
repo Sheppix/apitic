@@ -29,7 +29,7 @@ class CreateForeignKeyPersonnageTable extends Migration
      */
     public function down()
     {
-        Schema::table('personnage',function(Blueprint $table)
+        Schema::table('personnages',function(Blueprint $table)
         {
             $table->dropForeign('personnage_id_race_foreign');
             $table->dropForeign('personnage_id_classe_foreign');

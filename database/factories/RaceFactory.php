@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Race::class, function (Faker $faker) {
     return [
-        'nom_race' => $faker->nom_race
+        'nom_race' =>$faker->randomElement(['Orc','Humain','Gobelin','Nain','Elfe'])
     ];
 });

@@ -13,7 +13,7 @@ class CreateSpeClasseTable extends Migration
      */
     public function up()
     {
-        Schema::create('spe_classe', function (Blueprint $table) {
+        Schema::create('spe_classes', function (Blueprint $table) {
             $table->id();
             $table->string('nom_spe_classe');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateSpeClasseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spe_classe');
+        Schema::dropIfExists('spe_classes');
     }
 }

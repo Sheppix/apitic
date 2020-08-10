@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Armure::class, function (Faker $faker) {
     return [
-        'nom_armure' => $faker->nom_armure,
+        'nom_armure' => $faker->randomElement(['Titane','Cuir','Métal','Tissu']),
     ];
 });

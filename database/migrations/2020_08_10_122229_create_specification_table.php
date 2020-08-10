@@ -13,7 +13,7 @@ class CreateSpecificationTable extends Migration
      */
     public function up()
     {
-        Schema::create('specification', function (Blueprint $table) {
+        Schema::create('specifications', function (Blueprint $table) {
             $table->id();
             $table->string('nom_specification');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateSpecificationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specification');
+        Schema::dropIfExists('specifications');
     }
 }

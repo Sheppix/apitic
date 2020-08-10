@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateForeignKeyClasseTable extends Migration
+class CreateForeignKeyUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateForeignKeyClasseTable extends Migration
      */
     public function up()
     {
-        Schema::table('foreign_key_classe', function (Blueprint $table) {
-
-            $table->foreign('id_spe_classe')->references('id')->on('Spe_classe')->onDelete('cascade');
+        Schema::table('foreign_key_user', function (Blueprint $table) {
+            $table->foreign('id_personnage')->references('id')->on('Personnage')->onDelete('cascade');
         });
     }
 
@@ -26,9 +25,9 @@ class CreateForeignKeyClasseTable extends Migration
      */
     public function down()
     {
-        Schema::table('classes',function(Blueprint $table)
+        Schema::table('users',function(Blueprint $table)
         {
-            $table->dropForeign('classe_id_spe_classe_foreign');
+            $table->dropForeign('users_id_personnage_foreign');
         }
     );
     }

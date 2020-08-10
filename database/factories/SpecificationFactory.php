@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Specification::class, function (Faker $faker) {
     return [
-        'nom_specification' => $faker->nom_specification,
+        'nom_specification' => $faker->word,
     ];
 });

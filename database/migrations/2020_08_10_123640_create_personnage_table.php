@@ -13,7 +13,7 @@ class CreatePersonnageTable extends Migration
      */
     public function up()
     {
-        Schema::create('personnage', function (Blueprint $table) {
+        Schema::create('personnages', function (Blueprint $table) {
             $table->id();
             $table->string('nom_personnage');
             $table->bigInteger('id_race')->unsigned();
@@ -32,7 +32,7 @@ class CreatePersonnageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personnage');
+        Schema::dropIfExists('personnages');
       
     }
 }
