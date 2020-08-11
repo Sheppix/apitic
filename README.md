@@ -12,3 +12,4 @@
 6. `npm install`
 7. `npm run dev`
 8. `php artisan serve`
+9. `php artisan migrate:fresh --seed` pour mettre des données dans la base
