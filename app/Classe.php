@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Classe extends Model
 {
+    protected $fillable = ['id', 'nom_classe', 'id_spe_classe'];
+
     public function personnage()
     {
         return $this->hasOne('App\Personnage');

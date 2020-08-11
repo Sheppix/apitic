@@ -19,6 +19,7 @@ class CreateForeignKeyPersonnageTable extends Migration
             $table->foreign('id_classe')->references('id')->on('Classe')->onDelete('cascade');
             $table->foreign('id_armure')->references('id')->on('Armure')->onDelete('cascade');
             $table->foreign('id_specification')->references('id')->on('Specification')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('Specification')->onDelete('cascade');
         });
     }
 
@@ -35,6 +36,7 @@ class CreateForeignKeyPersonnageTable extends Migration
             $table->dropForeign('personnage_id_classe_foreign');
             $table->dropForeign('personnage_id_armure_foreign');
             $table->dropForeign('personnage_id_specification_foreign');
+            $table->dropForeign('personnage_id_user_foreign');
            }
         );
     }
