@@ -20,6 +20,7 @@ class CreatePersonnageTable extends Migration
             $table->bigInteger('id_classe')->unsigned();
             $table->bigInteger('id_armure')->unsigned();
             $table->bigInteger('id_specification')->unsigned();
+            $table->bigInteger('id_user')->unsigned();
          
             $table->timestamps(); 
         });

@@ -21,6 +21,5 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'pseudo' => $faker->firstName,
-        'id_personnage' => $faker->numberBetween(1,10),
     ];
 });

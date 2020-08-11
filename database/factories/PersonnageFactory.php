@@ -22,6 +22,9 @@ $factory->define(Personnage::class, function (Faker $faker) {
         },
         'id_classe' => function() {
             return factory(\App\Classe::class)->create()->id;
+        },
+        'id_user' => function() {
+            return factory(\App\User::class)->create()->id;
         } 
     ];
 });
