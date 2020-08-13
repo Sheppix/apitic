@@ -1,15 +1,15 @@
 @extends('welcome')
 
-<h2>Create</h2>
 <div class="container">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card">
-                        <div class="card-header">{{ __('create') }}</div>
+                        <div class="card-header">{{ __('Creation du personnage') }}</div>
                         <div class="card-body">
-                            <form action="/home/create" method="POST">
+
+                            <form action="{{route('home.store') }}" method="post">
                                 {{ csrf_field() }}
 
                                 <div class="form-group row">
@@ -51,9 +51,9 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="pseudo" class="col-md-4 col-form-label text-md-right">{{ __('Detail') }}</label>
+                                    <label for="pseudo" class="col-md-4 col-form-label text-md-right">{{ __('Classe') }}</label>
                                     <div class="col-md-6">
-                                        <input id="detail" type="text" class="form-control @error('detail') is-invalid @enderror" name="detail" value="{{ old('detail') }}"  autocomplete="detail" autofocus>
+                                        <input id="detail" type="text" class="form-control @error('detail') is-invalid @enderror" name="classe" value="{{ old('detail') }}"  autocomplete="detail" autofocus>
 
                                         @error('detail')
                                         <span class="invalid-feedback" role="alert">
@@ -63,26 +63,12 @@
                                     </div>
                                 </div>
 
-
-                                <div class="form-group row">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Propriétaire') }}</label>
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
-
-                                        @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
+                                
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('create') }}
-                                </button>
+                            <div class="col-md-6 offset-md-6">
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
                             </div>
                         </div>
 

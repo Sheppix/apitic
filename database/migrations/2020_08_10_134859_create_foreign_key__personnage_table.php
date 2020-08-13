@@ -13,13 +13,13 @@ class CreateForeignKeyPersonnageTable extends Migration
      */
     public function up()
     {
-        Schema::table('foreign_key__personnage', function (Blueprint $table) {
+        Schema::table('personnages', function (Blueprint $table) {
 
-            $table->foreign('id_race')->references('id')->on('Race')->onDelete('cascade');
-            $table->foreign('id_classe')->references('id')->on('Classe')->onDelete('cascade');
-            $table->foreign('id_armure')->references('id')->on('Armure')->onDelete('cascade');
-            $table->foreign('id_specification')->references('id')->on('Specification')->onDelete('cascade');
-            $table->foreign('id_user')->references('id')->on('Specification')->onDelete('cascade');
+            $table->foreign('id_race')->references('id')->on('Races')->onDelete('cascade');
+            $table->foreign('id_classe')->references('id')->on('Classes')->onDelete('cascade');
+            $table->foreign('id_armure')->references('id')->on('Armures')->onDelete('cascade');
+            $table->foreign('id_specification')->references('id')->on('Specifications')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('Users')->onDelete('cascade');
         });
     }
 

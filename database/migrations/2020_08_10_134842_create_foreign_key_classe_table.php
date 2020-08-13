@@ -13,9 +13,9 @@ class CreateForeignKeyClasseTable extends Migration
      */
     public function up()
     {
-        Schema::table('foreign_key_classe', function (Blueprint $table) {
+        Schema::table('classes', function (Blueprint $table) {
 
-            $table->foreign('id_spe_classe')->references('id')->on('Spe_classe')->onDelete('cascade');
+            $table->foreign('id_spe_classe')->references('id')->on('Spe_classes')->onDelete('cascade');
         });
     }
 
