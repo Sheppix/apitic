@@ -20,6 +20,5 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'pseudo' => $faker->firstName,
     ];
 });

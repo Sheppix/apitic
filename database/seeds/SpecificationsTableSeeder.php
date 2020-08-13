@@ -11,6 +11,6 @@ class SpecificationsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Specification::Class, 10)->create();
+       
     }
 }

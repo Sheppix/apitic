@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Armure;
 use App\Personnage;
 use App\Classe;
 use App\Race;
@@ -10,20 +11,14 @@ use Faker\Generator as Faker;
 
 $factory->define(Personnage::class, function (Faker $faker) {
     return [
-        'nom_personnage' => $faker->userName,
-        'id_armure' => function() {
-            return factory(\App\Armure::class)->create()->id;
-        },
-        'id_specification' => function() {
+        'pseudo' => $faker->unique()->userName,
+        'id_armure' =>Armure::all()->random()->id,
+         'id_specification' => function () {
             return factory(\App\Specification::class)->create()->id;
-        },
-        'id_race' => function() {
-            return factory(\App\Race::class)->create()->id; 
-        },
-        'id_classe' => function() {
-            return factory(\App\Classe::class)->create()->id;
-        },
-        'id_user' => function() {
+        }, 
+       'id_race' => Race::all()->random()->id,
+       'id_classe' => Classe::all()->random()->id,
+        'id_user' => function () {
             return factory(\App\User::class)->create()->id;
         } 
     ];

@@ -8,9 +8,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Classe::class, function (Faker $faker) {
     return [
-        'nom_classe' => $faker->randomElement(['Guerrier','Mage','Prêtre','Chasseur']),
-        'id_spe_classe' => function() {
-            return factory(\App\Spe_Classe::class)->create()->id;
-        },
+        'id_spe_classe' =>Spe_Classe::all()->random()->id,    
     ];
 });

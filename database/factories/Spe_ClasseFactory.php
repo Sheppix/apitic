@@ -6,7 +6,5 @@ use App\Spe_Classe;
 use Faker\Generator as Faker;
 
 $factory->define(Spe_Classe::class, function (Faker $faker) {
-    return [
-        'nom_spe_classe' =>$faker->randomElement(['Arme','Fureur','Protection'])
-    ];
+    
 });

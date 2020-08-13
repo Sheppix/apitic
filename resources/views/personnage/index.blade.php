@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
   <h1>Personnage</h1>
-
+  <div class="d-flex justify-content-center">
+    <a href="{{route('home.create') }}" class="btn btn-outline-success my-2 my-sm-0">Creer</a> 
+  </div>
   <table class="table ">
     <thead>
       <tr>
@@ -29,13 +31,18 @@
           <td><?= $personnage->nom_armure ?></td>
           <td><?= $personnage->nom_classe ?></td>
           <td><?= $personnage->name ?></td>
-          <td><button class="btn btn-outline-info my-2 my-sm-0">Edit</button></td>
-          <td><button class="btn btn-outline-danger my-2 my-sm-0">Delete</button></td>
+          <td><a href="{{ route('home.edit',$personnage->id) }}" class="btn btn-outline-info my-2 my-sm-0">Modifier</a></td>
+          <td>
+          <form method="post" action="{{ route('home.destroy',$personnage->id) }}" > 
+            @csrf
+            @method('DELETE')
+          <button type="submit" class="btn btn-outline-danger my-2 my-sm-0">Supprimer</button>
+          </form>
+          </td>
         <?php endforeach; ?>
         </tr>
     </tbody>
   </table>
-
-
 </div>
+
 @endsection

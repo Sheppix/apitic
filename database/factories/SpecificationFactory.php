@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Specification::class, function (Faker $faker) {
     return [
-        'nom_specification' => $faker->word,
+        'nom_specification' => $faker->numberBetween(500,1500),
     ];
 });
