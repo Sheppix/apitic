@@ -30,18 +30,20 @@
           <td><?= $personnage->nom_classe ?></td>
           <td><?= $personnage->name ?></td>
           <td><button class="btn btn-outline-info my-2 my-sm-0">Modifier</button></td>
-          <form method="POST" action="{{ route('delete',$personnage->id) }}" > 
+          <td>
+          <form method="post" action="{{ route('home.destroy',$personnage->id) }}" > 
             @csrf
-            @method('delete')
-          <td><button class="btn btn-outline-danger my-2 my-sm-0">Supprimer</button></td>
+            @method('DELETE')
+          <button type="submit" class="btn btn-outline-danger my-2 my-sm-0">Supprimer</button>
           </form>
+          </td>
         <?php endforeach; ?>
         </tr>
     </tbody>
   </table>
 
   <div class="d-flex justify-content-center">
-    <a href="/create" class="btn btn-outline-success my-2 my-sm-0">Creer</a> 
+    <a href="/home/create" class="btn btn-outline-success my-2 my-sm-0">Creer</a> 
   </div>
 </div>
 

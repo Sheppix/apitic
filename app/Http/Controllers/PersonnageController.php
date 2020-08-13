@@ -2,83 +2,99 @@
 
 namespace App\Http\Controllers;
 
-use App\Armure;
-use App\Classe;
 use App\Personnage;
-use App\Race;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PersonnageController extends Controller
 {
-    public function list()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $perso = DB::table('personnages')
-            ->join('races', 'id_race', '=', 'races.id')
-            ->join('specifications', 'id_specification', '=', 'specifications.id')
-            ->join('users', 'id_user', '=', 'users.id')
-            ->join('armures', 'id_armure', '=', 'armures.id')
-            ->join('classes', 'id_classe', '=', 'classes.id')
-            ->select('personnages.id','personnages.pseudo', 'races.nom_race', 'specifications.nom_specification','users.name','armures.nom_armure','classes.nom_classe')
-            ->orderBy('personnages.id')
-            ->get();
-            return view('personnage.index',[
-                'perso' => $perso
-            ]);
-    }
-    
-    public function create()
-    {
-        $perso = DB::table('personnages')
-            ->join('races', 'id_race', '=', 'races.id')
-            ->join('specifications', 'id_specification', '=', 'specifications.id')
-            ->join('users', 'id_user', '=', 'users.id')
-            ->join('armures', 'id_armure', '=', 'armures.id')
-            ->join('classes', 'id_classe', '=', 'classes.id')
-            ->select('personnages.id','personnages.pseudo', 'races.nom_race', 'specifications.nom_specification','users.name','armures.nom_armure','classes.nom_classe')
-            ->orderBy('personnages.id')
-            ->get();
-        
-            return view('personnage.create',[
-                'perso' => $perso
-            ]);
-    }
-
-    
-    public function store(Request $request)
-    { 
-        $perso = new Personnage();
-        $armure = new Armure();
-        $race = new Race();
-        $classe = new Classe();
-        
-        $perso->pseudo = $request->get('pseudo');
-        $armure->nom_armure= $request->get('armure');
-        $race->nom_race= $request->get('race');
-        $classe->nom_classe= $request->get('classe');
-
-        $perso->save();
-        $armure->save();
-        $race->save();
-        $classe->save();
-
-        return view('personnage.create', [
-            'perso' => $perso,
-            'armure' => $armure,
-            'race' => $race,
-            'classe' => $classe,
+        ->join('races', 'id_race', '=', 'races.id')
+        ->join('specifications', 'id_specification', '=', 'specifications.id')
+        ->join('users', 'id_user', '=', 'users.id')
+        ->join('armures', 'id_armure', '=', 'armures.id')
+        ->join('classes', 'id_classe', '=', 'classes.id')
+        ->select('personnages.id','personnages.pseudo', 'races.nom_race', 'specifications.nom_specification','users.name','armures.nom_armure','classes.nom_classe')
+        ->orderBy('personnages.id')
+        ->get();
+        return view('personnage.index',[
+            'perso' => $perso
         ]);
     }
 
-    
-    public function delete($id)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $perso = Personnage::find($id);
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $perso = Personnage::findOrFail($id);
         $perso->delete();
 
         return redirect('/home')->with('success', 'Personnage effacer!');
     }
-} 
-        
-
-      
+}

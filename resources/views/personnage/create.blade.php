@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="card-header">{{ __('create') }}</div>
                         <div class="card-body">
-                            <form action="/personnage" method="POST">
+                            <form action="/home/create" method="POST">
                                 {{ csrf_field() }}
 
                                 <div class="form-group row">
