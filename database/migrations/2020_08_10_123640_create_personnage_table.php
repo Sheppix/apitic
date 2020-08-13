@@ -15,12 +15,12 @@ class CreatePersonnageTable extends Migration
     {
         Schema::create('personnages', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_personnage');
-            $table->bigInteger('id_race')->unsigned();
-            $table->bigInteger('id_classe')->unsigned();
-            $table->bigInteger('id_armure')->unsigned();
-            $table->bigInteger('id_specification')->unsigned();
-            $table->bigInteger('id_user')->unsigned();
+            $table->string('pseudo')->unique();
+            $table->bigInteger('id_race')->unsigned()->nullable();
+            $table->bigInteger('id_classe')->unsigned()->nullable();
+            $table->bigInteger('id_armure')->unsigned()->nullable();
+            $table->bigInteger('id_specification')->unsigned()->nullable();
+            $table->bigInteger('id_user')->unsigned()->nullable();
          
             $table->timestamps(); 
         });

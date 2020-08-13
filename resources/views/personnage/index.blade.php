@@ -29,13 +29,20 @@
           <td><?= $personnage->nom_armure ?></td>
           <td><?= $personnage->nom_classe ?></td>
           <td><?= $personnage->name ?></td>
-          <td><button class="btn btn-outline-info my-2 my-sm-0">Edit</button></td>
-          <td><button class="btn btn-outline-danger my-2 my-sm-0">Delete</button></td>
+          <td><button class="btn btn-outline-info my-2 my-sm-0">Modifier</button></td>
+          <form method="POST" action="{{ route('delete',$personnage->id) }}" > 
+            @csrf
+            @method('delete')
+          <td><button class="btn btn-outline-danger my-2 my-sm-0">Supprimer</button></td>
+          </form>
         <?php endforeach; ?>
         </tr>
     </tbody>
   </table>
 
-
+  <div class="d-flex justify-content-center">
+    <a href="/create" class="btn btn-outline-success my-2 my-sm-0">Creer</a> 
+  </div>
 </div>
+
 @endsection

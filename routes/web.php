@@ -17,8 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/home', 'HomeController@index')->name('home');
-
-//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'PersonnageController@list');
+
+//Route::get('/create', 'PersonnageController@list');
+
+//route pour accéder à la fonction ajouter un personnage
+Route::get('/create', 'PersonnageController@create')->name('home');
+Route::post('/create', 'PersonnageController@store');
+
+
+
+Route::get('/delete/{id}', 'PersonnageController@delete')->name('delete');
