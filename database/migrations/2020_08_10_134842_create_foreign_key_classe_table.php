@@ -28,7 +28,7 @@ class CreateForeignKeyClasseTable extends Migration
     {
         Schema::table('classes',function(Blueprint $table)
         {
-            $table->dropForeign('classe_id_spe_classe_foreign');
+            $table->dropForeign('id_spe_classe');
         }
     );
     }
