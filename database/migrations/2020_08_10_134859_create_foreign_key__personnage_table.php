@@ -32,11 +32,11 @@ class CreateForeignKeyPersonnageTable extends Migration
     {
         Schema::table('personnages',function(Blueprint $table)
         {
-            $table->dropForeign('personnage_id_race_foreign');
-            $table->dropForeign('personnage_id_classe_foreign');
-            $table->dropForeign('personnage_id_armure_foreign');
-            $table->dropForeign('personnage_id_specification_foreign');
-            $table->dropForeign('personnage_id_user_foreign');
+            $table->dropForeign('id_race');
+            $table->dropForeign('id_classe');
+            $table->dropForeign('id_armure');
+            $table->dropForeign('id_specification');
+            $table->dropForeign('id_user');
            }
         );
     }
